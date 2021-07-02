@@ -1,0 +1,298 @@
+:root {
+  --filter-glass: blur(20px) saturate(180%);
+  --con-primary: rgba(255, 255, 255, .75);
+  --elevated-primary: rgba(255, 255, 255, .75);
+  --elevated-secondary: rgba(255, 255, 255, .75);
+  --depth-1: 0 10px 20px rgba(0, 0, 0, .03), 0 5px 10px rgba(0, 0, 0, .02);
+  --radius: 10px;
+  --text-main: #000;
+  --logoimg: url(https://i.loli.net/2019/05/11/5cd6a4d7196cf.png);
+}
+
+// bilibili字符图标
+@font-face{font-family:bilifont;
+  src:url(//s1.hdslb.com/bfs/static/jinkela/international-home/assets/iconfont.woff2) format("woff2"),
+  url(//s1.hdslb.com/bfs/static/jinkela/international-home/assets/iconfont.woff) format("woff"),
+  url(//s1.hdslb.com/bfs/static/jinkela/international-home/assets/iconfont.ttf) format("truetype")
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .search { 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFEFF4;
+    background-image: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/moe-project/bilibili/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &-mask {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: #77777A;
+      filter: opacity(0.4);
+      z-index: 0;
+    }
+    .nav-search-box {
+      position: absolute;
+      width: 600px;
+      top: 30vh;
+      #nav_searchform {
+        background-color: var(--con-primary);
+        box-shadow: var(--depth-1);
+        padding: 8px 42px 8px 20px;
+        border-radius: var(--radius);
+        transition: .25s;
+        backdrop-filter: var(--filter-glass);
+        border: none;
+        z-index: 999;
+        .nav-search-keyword {
+          font-size: 16px;
+          color: var(--text-main);
+          overflow: hidden;
+          width: 100%;
+          height: 34px;
+          border: none;
+          line-height: 34px;
+          transition: all .2s;
+          background-color: transparent;
+        }
+        .nav-search-btn {
+          background-color: transparent;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          margin: 0px;
+          padding: 0px;
+          width: 48px;
+          height: 36px;
+          border: none;
+          border-radius: 2px;
+          line-height: 26px;
+          cursor: pointer;
+          color: var(--text-main);
+          .bili-icon_dingdao_sousuo::before {
+            content: "\E72C";
+          }
+          .bili-icon_dingdao_sousuo:hover {
+            color: #00A1D6;
+          }
+          .nav-search-submit {
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            background: none;
+            color: #505050;
+            font-size: 16px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: all .2s;
+          }
+        }
+      }
+      .bilibili-search-history {
+        display: none;
+        position: absolute;
+        width: 100%;
+        list-style: none;
+        border-radius: var(--radius);
+        background-color: var(--con-primary);
+        backdrop-filter: var(--filter-glass);
+        box-shadow: var(--depth-1);
+        border: none;
+        margin-top: 1px;
+        z-index: 999;
+        padding: 10px 0;
+        font-size: 14px;
+        .history-item {
+          padding: 6px 10px 6px 16px;
+          height: 32px;
+          line-height: 32px;
+          cursor: pointer;
+          word-wrap: break-word;
+          word-break: break-all;
+          color: #222;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          transition: .2s ease;
+          a {
+            color: var(--text-main);
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-decoration: none;
+          }
+          &:hover {
+            background-color: #C5C4C6;
+          }
+        }
+        
+        .cancel-icon {
+          color: #999;
+        }
+        .bili-icon_sousuo_yichu::before  {
+          content: "\E74A";
+        }
+        .bili-icon_sousuo_yichu:hover  {
+          color: #00A1D6;
+        }
+      }
+    }
+    .nav-search-box::after {
+      content: '';
+      position: absolute;
+      top: -300%;
+      left: calc(50% - 100px);
+      background: url("https://i.loli.net/2019/05/11/5cd6a4d7196cf.png");
+      background-repeat: no-repeat;
+      background-size: 200px;
+      width: 210px;
+      height: 100px;
+      filter: (drop-shadow(0 4px 6px rgba(0,0,0,.08)));
+      z-index: 9999;
+    }
+  }
+
+  .bilifont {
+    font-family: bilifont;
+    font-style: normal;
+  }
+  // .search {
+  //   width: 500px;
+  //   height: 120px;
+  //   position: relative;
+  //   overflow: hidden;
+  //   &-input {
+  //     width: 100%;
+  //     height: 100%;
+  //     padding: 0 65px 25px 60px;
+  //     position: absolute;
+  //     z-index: 1;
+  //     border: none;
+  //     outline: none;
+  //     background-color: rgba(255,255,255,.15);
+  //     color: #ddd;
+  //     font-size: 28px;
+  //     letter-spacing: .3px;
+  //     transform-origin: 10%;
+  //     transform: scaleX(0);
+  //     font-family: 'PT Sans', sans-serif;
+  //   }
+  //   &-button {
+  //     position: absolute;
+  //     right: 110px;
+  //     bottom: 33px;
+  //     width: 50px;
+  //     height: 50px;
+  //     border-radius: 50%;
+  //     border: 3px solid #fff;
+  //     background-color: transparent;
+  //     cursor: pointer;
+  //     outline: none;
+  //     transform: rotate(45deg);
+  //     -webkit-tap-highlight-color: transparent;
+  //     &::-moz-focus-inner {
+  //       border: 0;
+  //     }
+  //   }
+  //   &-label {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 60px;
+  //     width: 325px;
+  //     height: 77px;
+  //     line-height: 95px;
+  //     color: #ddd;
+  //     font-size: 28px;
+  //     letter-spacing: .3px;
+  //     pointer-events: none;
+  //     overflow: hidden;
+  //     div {
+  //       white-space: pre;
+  //     }
+  //   }
+  //   &-border {
+  //     width: 25px;
+  //     height: 3px;
+  //     position: absolute;
+  //     right: 97px;
+  //     bottom: 32px;
+  //     transform: rotate(45deg);
+  //     background-color: #fff;
+  //     cursor: pointer;
+  //   }
+  //   &-text {
+  //     opacity: 0;
+  //     pointer-events: none;
+  //   }
+  //   &:before {
+  //     content: '';
+  //     position: absolute;
+  //     width: 3px;
+  //     height: 18px;
+  //     left: 40px;
+  //     top: 40px;
+  //     background-color: #fff;
+  //     opacity: 0;
+  //     transition: opacity .3s;
+  //   }
+  //   &.edge:before {
+  //     opacity: 1;
+  //   }
+  //   &-close {
+  //     position: absolute;
+  //     right: 15px;
+  //     top: 5px;
+  //     z-index: 5;
+  //     color: #fff;
+  //     font-size: 24px;
+  //     cursor: pointer;
+  //     opacity: 0;
+  //     pointer-events: none;
+  //     transition: opacity .4s;
+  //     &.visible {
+  //       opacity: 1;
+  //       pointer-events: auto;
+  //       transition-delay: .4s;
+  //     }
+  //   }
+  //   &-btn{
+  //       width: 60px;
+  //       height: 30px;
+  //       position: absolute;
+  //       z-index: 5;
+  //       color: #fff;
+  //       font-size: 24px;
+  //       cursor: pointer;
+  //       top: 45px;
+  //       line-height: 30px;
+  //       opacity: 0;
+  //       right: 30px;
+  //     &.visible {
+  //         opacity: 1;
+  //         pointer-events :auto;
+  //         transition-delay: .4s;
+  //       }
+  //     }
+  // }
+  
+  // input::-ms-clear{
+  //    display: none;
+  // }
+  

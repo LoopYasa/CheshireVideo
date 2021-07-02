@@ -1,0 +1,5 @@
+export const CHANGEKEYWORD = 'changekeyword'
+export const CHANGEID = 'changeid'
+export const CHANGECOOKIE = 'changecookie'
+export const CHANGESEASONID = 'changeseasonid'
+export const CHANGEEP = 'changeep'

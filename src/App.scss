@@ -1,0 +1,27 @@
+:root {
+    --theme-bg-color: rgba(16 18 27 / 40%);
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+.app {
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.wrapper {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}

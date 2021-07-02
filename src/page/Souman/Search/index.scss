@@ -1,0 +1,122 @@
+:root {
+    --theme-bg-color: rgba(16 18 27 / 40%);
+    --border-color: rgba(113 119 144 / 25%);
+    --theme-color: #f9fafb;
+    --inactive-color: rgb(113 119 144 / 78%);
+    --body-font: "Poppins", sans-serif;
+    --hover-menu-bg: rgba(12 15 25 / 30%);
+    --content-title-color: #999ba5;
+    --content-bg: rgb(146 151 179 / 13%);
+    --button-inactive: rgb(249 250 251 / 55%);
+    --dropdown-bg: #21242d;
+    --dropdown-hover: rgb(42 46 60);
+    --popup-bg: rgb(22 25 37);
+    --search-bg:  #14162b;
+    --overlay-bg: rgba(36, 39, 59, 0.3);
+    --scrollbar-bg: rgb(1 2 3 / 40%);
+   }
+   
+   .light-mode {
+     --theme-bg-color: rgb(255 255 255 / 31%);
+    --theme-color: #3c3a3a;
+    --inactive-color: #333333;
+     --button-inactive: #3c3a3a;
+    --search-bg: rgb(255 255 255 / 31%);
+    --dropdown-bg: #f7f7f7;
+    --overlay-bg: rgb(255 255 255 / 30%);
+    --dropdown-hover: rgb(236 236 236);
+    --border-color: rgb(255 255 255 / 35%);
+    --popup-bg: rgb(255 255 255);
+    --hover-menu-bg: rgba(255 255 255 / 35%);
+    --scrollbar-bg: rgb(255 253 253 / 57%);
+    --content-title-color: --theme-color;
+}
+   
+.souman-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.soman.com/static/images/index-bg-pc-10.jpg");
+    background-size: 100% 100%;
+    &_mid {
+        width: 100%;
+        height: 30%;
+    }
+    .container_mid{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30%;
+        @media screen and (max-width:520px) {
+            margin-left: -100px;
+            margin-top: -100px;
+            transition: 0.3s ease;
+        }
+    }
+}
+
+.input-form {
+    position: relative;
+    width: calc(50%);
+    transition: 0.3s ease;
+    z-index: 1;
+    margin: 0 auto;
+    border: 3px solid #ff7b2d;
+    border-radius: 33px;
+    margin-bottom: 25px;
+    @media screen and (min-width:1207px) {
+        width: 500px;
+    }
+}
+
+.input-form input {
+    outline: none;
+    border: none;
+    height: 55px;
+    line-height: 55px;
+    width: 90%;
+    padding-left: 60px;
+    padding-right: 23px;
+    font-family: 'Tangerine', serif;
+    text-shadow: 4px 4px 4px #aaa;
+    font-weight: 800;
+    font-size: 20px;
+    background-size: 23px 22px;
+    background-image: url("https://www.soman.com/static/images/search-pc.png");
+    background-position: 19px 17px;
+    background-repeat: no-repeat;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.main-form-btn {
+    position: absolute;
+    text-decoration: none;
+    height: 61px;
+    width: 150px;
+    line-height: 61px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    margin: -3px;
+    font-family: var(--body-font);
+    font-weight: 500;
+    border-radius: 0px 33px 33px 0px;
+    background: linear-gradient(90deg, #FF7E2E 0%, #FD571A 48%, #FE1B5B 100%);
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-bg);
+    border-radius: 10px;
+}
+   

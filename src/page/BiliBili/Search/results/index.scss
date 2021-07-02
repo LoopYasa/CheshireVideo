@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.results {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #FFFFFF;
+    .contain {
+        width: 980px;
+        margin: 0 auto;
+        .head-contain {
+            padding-top: 40px;
+            .search-wrap {
+                height: 44px;
+                margin: 0 auto;
+                position: relative;
+                width: 587px;
+            }
+        }
+    }
+}
+
+.search-logo {
+    background-image: url('https://s1.hdslb.com/bfs/static/jinkela/search/assets/sprite-690be8a6ea.png');
+    background-position: -261px -72px;
+    width: 131px;
+    height: 35px;
+    float: left;
+    margin-top: 7px;
+}
+
+.search-block {
+    width: 430px;
+    float: left;
+    margin-left: 26px;
+    .input-wrap {
+        position: relative;
+        background: #fff;
+        border-radius: 4px;
+        float: left;
+        margin-right: 10px;
+        #search-keyword {
+            height: 18px;
+            box-shadow: none;
+            padding: 20px 15px;
+            background: transparent;
+            width: 296px;
+            border: 2px solid #ccd0d7;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #222;
+        }
+    }
+    .search-button {
+        cursor: pointer;
+        float: left;
+        color: #fff;
+        background: #00a1d6;
+        width: 90px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        line-height: 42px;
+        text-align: center;
+        border-radius: 4px;
+        .icon-search-white {
+            background-image: url('https://s1.hdslb.com/bfs/static/jinkela/search/assets/sprite-690be8a6ea.png');
+            background-position: -148px -327px;
+            width: 18px;
+            vertical-align: middle;
+            margin-top: -2px;
+            height: 19px;
+            display: inline-block;
+        }
+    }
+}
+
+.navigator {
+    overflow: hidden;
+    margin-top: 18px;
+    width: 1026px;
+    height: 56px;
+    .v-switcher {
+        overflow: hidden;
+        position: relative;
+    }
+    .switcher-header-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        .switcher-tabs {
+            overflow: hidden;
+            height: 100%;
+            flex-grow: 1;
+            order: 1;
+            .switcher-header {
+                position: relative;
+                font-size: 0;
+                z-index: 1;
+                padding: 0;
+                margin: 0;
+                white-space: nowrap;
+                flex-grow: 1;
+                .switcher-header-item {
+                   height: 56px;
+                   line-height: 56px;
+                   width: 12.5%;
+                   border-bottom: 1px solid #ccd0d7; 
+                   box-sizing: border-box;
+                   display: inline-block;
+                   text-align: center;
+                   font-size: 15px;
+                   color: #657786;
+                   vertical-align: middle;
+                   white-space: nowrap;
+                   .change-nav {
+                    color: #000;
+                    font-size: 16px;
+                    display: block;
+                        &:hover {
+                            color: #00a1d6!important;
+                        }
+                    }
+                    .change-nav .router-active {
+                        color: #00a1d6!important;
+                    }
+                }
+                .switcher-header-anchor {
+                    width: 54.25px;
+                    transition-duration: 300ms;
+                    background-color: #00a1d6;
+                    height: 2px;
+                    top: 54px;
+                    display: block;
+                    position: absolute;
+                    left: 0px;
+                    transition-property: transform;
+                    transition-timing-function: ease;
+                    will-change: transform;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+
